@@ -1,0 +1,14 @@
+com\omega\model\Product.class
+com\omega\listener\DataSeedingListener.class
+com\omega\model\Manufacturer.class
+com\omega\config\securiry\MethodSecurityConfiguration.class
+com\omega\config\securiry\SecurityConfiguration.class
+com\omega\model\Category.class
+com\omega\model\Order.class
+com\omega\OmegaBuyServiceApplication.class
+com\omega\config\securiry\ResourceServerConfiguration.class
+com\omega\model\Inventory.class
+com\omega\config\custom\CustomBeanConfig.class
+com\omega\model\Cart.class
+com\omega\config\general\HerokuNotIdle.class
+com\omega\model\Item.class

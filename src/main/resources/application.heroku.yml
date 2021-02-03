@@ -1,0 +1,18 @@
+logging:
+  level: error
+  level.org.springframework.data: debug
+server:
+  port: 8090
+  servlet:
+    context-path: /omega-buy
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:${DATABASE_URL:}
+  jpa:
+    hibernate:
+      ddl-auto: none
+      use-new-id-generator-mappings: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
