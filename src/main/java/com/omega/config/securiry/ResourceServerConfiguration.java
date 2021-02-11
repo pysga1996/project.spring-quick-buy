@@ -29,9 +29,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
   @Override
   public void configure(final HttpSecurity http) throws Exception {
     http.authorizeRequests()
-        .antMatchers("/api/admin/**").access("hasRole('ADMIN')")
-        .antMatchers("/oauth/**", "/api/login", "/api/register", "/api/user-list").permitAll()
-        .antMatchers("/api/**").authenticated()
+        .anyRequest().permitAll()
         .and().cors()
         .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
   }

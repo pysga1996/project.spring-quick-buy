@@ -1,2 +1,5 @@
-# project.spring-quick-buy
-An e-commerce application uses MongoDB as database.
+# Omega Buy Service
+
+Technology Stack
+- Spring Boot 2.4
+- Postgres 13

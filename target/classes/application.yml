@@ -1,16 +1,27 @@
-logging:
-  level: error
-  level.org.springframework.data: debug
 server:
   port: 8090
   servlet:
     context-path: /omega-buy
+logging:
+  level:
+    root: info
+#  org.springframework.data: debug
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     password: 123456
     username: postgres
     url: jdbc:postgresql://localhost:5432/postgres
+    hikari:
+      connectionTimeout: 30000
+      idleTimeout: 100000
+      maxLifetime: 900000
+      maximum-pool-size: 20
+      minimum-idle: 10
+    initialization-mode: never
+  messages:
+    basename: static/i18n/message
+    encoding: UTF-8
   jpa:
     hibernate:
       ddl-auto: none
@@ -18,3 +29,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL10Dialect
+        format_sql: true
+    show-sql: true
+    open-in-view: false
+  web:
+    locale-resolver: accept_header
+custom:
+  auth-service: ${AUTH_SERVICE:}
+  client-id: ${CLIENT_ID:}
+  client-secret: ${CLIENT_SECRET:}
