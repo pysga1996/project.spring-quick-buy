@@ -8,15 +8,28 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "product")
-@Table(name = "product", schema = "omega_buy")
+@NamedEntityGraphs({
+        @NamedEntityGraph(name = "Product.full",
+                attributeNodes = {@NamedAttributeNode(value = "categories"),
+                        @NamedAttributeNode(value = "manufacturer"),
+                        @NamedAttributeNode(value = "inventories")}
+        ),
+        @NamedEntityGraph(name = "Product.manufacturer",
+                attributeNodes = {@NamedAttributeNode(value = "manufacturer")}
+        )
+})
+@Entity(name = "Product")
+@Table(name = "product")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "product_id_gen")
-    @SequenceGenerator(name = "product_id_gen", sequenceName = "product_id_seq")
+    @SequenceGenerator(name = "product_id_gen", sequenceName = "product_id_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
+
+    @Column(name = "code")
+    private String code;
 
     @Column(name = "name")
     private String name;
@@ -36,6 +49,7 @@ public class Product {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "manufacturer_id", referencedColumnName = "id")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private Manufacturer manufacturer;

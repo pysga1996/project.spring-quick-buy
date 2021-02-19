@@ -28,8 +28,13 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL10Dialect
         format_sql: true
+        default_schema: omega_buy
     show-sql: true
     open-in-view: false
+  banner:
+    location: classpath:banner.txt
+  main:
+    banner-mode: log
 custom:
   auth-service: ${AUTH_SERVICE:}
   client-id: ${CLIENT_ID:}

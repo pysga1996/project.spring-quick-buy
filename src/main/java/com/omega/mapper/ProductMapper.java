@@ -1,47 +1,65 @@
 package com.omega.mapper;
 
-import com.omega.model.dto.CategoryDTO;
-import com.omega.model.dto.InventoryDTO;
-import com.omega.model.dto.ManufacturerDTO;
+import com.omega.mapper.annotation.FullMapping;
+import com.omega.mapper.annotation.PureMapping;
 import com.omega.model.dto.ProductDTO;
-import com.omega.model.entity.Category;
-import com.omega.model.entity.Inventory;
 import com.omega.model.entity.Manufacturer;
 import com.omega.model.entity.Product;
-import org.mapstruct.*;
+import org.mapstruct.IterableMapping;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 
-import java.util.Collection;
-import java.util.Set;
+import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {CategoryMapper.class, ManufacturerMapper.class, InventoryMapper.class})
 public abstract class ProductMapper {
 
-    abstract Product dtoToEntity(ProductDTO productDTO);
-
+    @FullMapping
     @Mappings({
-            @Mapping(target = "categories", qualifiedByName = "pureCategories"),
-            @Mapping(target = "manufacturer", qualifiedByName = "pureManufacturer"),
-            @Mapping(target = "inventories", qualifiedByName = "pureInventories")
+            @Mapping(target = "categories", qualifiedBy = {PureMapping.class}),
+            @Mapping(target = "manufacturer", qualifiedBy = {PureMapping.class}),
+            @Mapping(target = "inventories", qualifiedBy = {PureMapping.class})
     })
-    abstract ProductDTO entityToDto(Product product);
+    public abstract ProductDTO entityToDto(Product product);
 
-    @Named("pureCategories")
-    @IterableMapping(qualifiedByName = "pureCategory")
-    abstract Collection<CategoryDTO> pureCategories(Set<Category> categories);
+    @FullMapping
+    @Mappings({
+            @Mapping(target = "categories", qualifiedBy = {PureMapping.class}),
+            @Mapping(target = "manufacturer", qualifiedBy = {PureMapping.class}),
+            @Mapping(target = "inventories", qualifiedBy = {PureMapping.class})
+    })
+    public abstract Product dtoToEntity(ProductDTO product);
 
-    @Named("pureCategory")
-    @Mapping(target = "products", ignore = true)
-    abstract CategoryDTO pureCategory(Category category);
+    @FullMapping
+    @IterableMapping(qualifiedBy = {FullMapping.class})
+    public abstract List<ProductDTO> entityToDtoList(List<Product> products);
 
-    @Named("pureManufacturer")
-    @Mapping(target = "products", ignore = true)
-    abstract ManufacturerDTO pureManufacturer(Manufacturer manufacturer);
+    @FullMapping
+    @IterableMapping(qualifiedBy = {FullMapping.class})
+    public abstract List<Product> dtoToEntityList(List<ProductDTO> products);
 
-    @Named("pureInventories")
-    @IterableMapping(qualifiedByName = "pureInventory")
-    abstract Collection<InventoryDTO> pureInventories(Set<Inventory> inventories);
+    @PureMapping
+    @Mappings({
+            @Mapping(target = "categories", ignore = true),
+            @Mapping(target = "manufacturer", ignore = true),
+            @Mapping(target = "inventories", ignore = true)
+    })
+    public abstract ProductDTO entityToDtoPure(Product product);
 
-    @Named("pureInventory")
-    @Mapping(target = "products", ignore = true)
-    abstract InventoryDTO pureInventory(Inventory inventory);
+    @PureMapping
+    @Mappings({
+            @Mapping(target = "categories", ignore = true),
+            @Mapping(target = "manufacturer", ignore = true),
+            @Mapping(target = "inventories", ignore = true)
+    })
+    public abstract Product dtoToEntityPure(ProductDTO product);
+
+    @PureMapping
+    @IterableMapping(qualifiedBy = {PureMapping.class})
+    public abstract List<ProductDTO> entityToDtoListPure(List<Product> products);
+
+    @PureMapping
+    @IterableMapping(qualifiedBy = {PureMapping.class})
+    public abstract List<Product> dtoToEntityListPure(List<ProductDTO> products);
 }

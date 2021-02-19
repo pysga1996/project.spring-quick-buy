@@ -1,24 +1,56 @@
 package com.omega.mapper;
 
+import com.omega.mapper.annotation.FullMapping;
+import com.omega.mapper.annotation.PureMapping;
 import com.omega.model.dto.ManufacturerDTO;
-import com.omega.model.dto.ProductDTO;
 import com.omega.model.entity.Manufacturer;
-import com.omega.model.entity.Product;
-import org.mapstruct.*;
+import org.mapstruct.IterableMapping;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring")
+import java.util.List;
+
+@Mapper(componentModel = "spring", uses = {ProductMapper.class})
 public abstract class ManufacturerMapper {
 
-    public abstract Manufacturer dtoToEntity(ManufacturerDTO manufacturerDTO);
-
-    @Mapping(target = "products", qualifiedByName = "pureProducts")
+    @FullMapping
+    @Mappings({
+            @Mapping(target = "products", qualifiedBy = {PureMapping.class})
+    })
     public abstract ManufacturerDTO entityToDto(Manufacturer manufacturer);
 
-    @Named("pureProducts")
+    @FullMapping
     @Mappings({
-            @Mapping(target = "categories", ignore = true),
-            @Mapping(target = "manufacturer", ignore = true),
-            @Mapping(target = "inventories", ignore = true)
+            @Mapping(target = "products", qualifiedBy = {PureMapping.class})
     })
-    abstract ProductDTO pureProducts(Product product);
+    public abstract Manufacturer dtoToEntity(ManufacturerDTO manufacturer);
+
+    @FullMapping
+    @IterableMapping(qualifiedBy = {FullMapping.class})
+    public abstract List<ManufacturerDTO> entityToDtoList(List<Manufacturer> manufacturers);
+
+    @FullMapping
+    @IterableMapping(qualifiedBy = {FullMapping.class})
+    public abstract List<Manufacturer> dtoToEntityList(List<ManufacturerDTO> manufacturers);
+
+    @PureMapping
+    @Mappings({
+            @Mapping(target = "products", ignore = true)
+    })
+    public abstract ManufacturerDTO entityToDtoPure(Manufacturer manufacturer);
+
+    @PureMapping
+    @Mappings({
+            @Mapping(target = "products", ignore = true)
+    })
+    public abstract Manufacturer dtoToEntityPure(ManufacturerDTO manufacturer);
+
+    @PureMapping
+    @IterableMapping(qualifiedBy = {PureMapping.class})
+    public abstract List<ManufacturerDTO> entityToDtoListPure(List<Manufacturer> manufacturers);
+
+    @PureMapping
+    @IterableMapping(qualifiedBy = {PureMapping.class})
+    public abstract List<Manufacturer> dtoToEntityListPure(List<ManufacturerDTO> manufacturers);
 }

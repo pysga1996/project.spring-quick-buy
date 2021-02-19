@@ -9,6 +9,8 @@ public interface ManufacturerService {
 
     List<ManufacturerDTO> getManufacturerList();
 
+    List<ManufacturerDTO> getManufacturerDropList();
+
     Optional<ManufacturerDTO> getManufacturerById(Long id);
 
     void saveManufacturer(ManufacturerDTO manufacturerDTO);

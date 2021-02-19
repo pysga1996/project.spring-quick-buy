@@ -10,7 +10,8 @@ import java.util.Collection;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "category")
+@Entity(name = "Category")
+@Table(name = "category")
 public class Category {
 
   @Id

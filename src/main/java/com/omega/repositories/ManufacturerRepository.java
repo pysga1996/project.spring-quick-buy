@@ -10,13 +10,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ManufacturerRepository extends JpaRepository<Manufacturer, Long> {
+public interface ManufacturerRepository extends JpaRepository<Manufacturer, Long>, ManufacturerRepositoryCustom {
 
-    @EntityGraph("Manufacturer.products")
     @NonNull
     List<Manufacturer> findAll();
 
-    @EntityGraph("Manufacturer.products")
+    @EntityGraph(value = "Manufacturer.products", type = EntityGraph.EntityGraphType.FETCH)
     @NonNull
     Optional<Manufacturer> findById(@NonNull Long id);
+
+    boolean existsByCode(String code);
+
+    boolean existsByCodeAndIdNot(String code, Long id);
 }

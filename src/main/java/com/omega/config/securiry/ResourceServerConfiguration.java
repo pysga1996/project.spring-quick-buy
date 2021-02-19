@@ -14,24 +14,26 @@ import org.springframework.security.oauth2.provider.token.ResourceServerTokenSer
 @EnableResourceServer
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
 
-  private final ResourceServerTokenServices resourceServerTokenServices;
+    private final ResourceServerTokenServices resourceServerTokenServices;
 
-  @Autowired
-  public ResourceServerConfiguration(ResourceServerTokenServices resourceServerTokenServices) {
-    this.resourceServerTokenServices = resourceServerTokenServices;
-  }
+    @Autowired
+    public ResourceServerConfiguration(ResourceServerTokenServices resourceServerTokenServices) {
+        this.resourceServerTokenServices = resourceServerTokenServices;
+    }
 
-  @Override
-  public void configure(ResourceServerSecurityConfigurer resources) {
-    resources.tokenServices(resourceServerTokenServices);
-  }
+    @Override
+    public void configure(ResourceServerSecurityConfigurer resources) {
+        resources.tokenServices(resourceServerTokenServices);
+    }
 
-  @Override
-  public void configure(final HttpSecurity http) throws Exception {
-    http.authorizeRequests()
-        .anyRequest().permitAll()
-        .and().cors()
-        .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-  }
+    @Override
+    public void configure(final HttpSecurity http) throws Exception {
+        http.anonymous().key("omega").authorities("ANONYMOUS")
+                .and()
+                .authorizeRequests()
+                .anyRequest().permitAll()
+                .and().cors()
+                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    }
 
 }

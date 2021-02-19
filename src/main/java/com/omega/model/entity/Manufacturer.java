@@ -11,8 +11,6 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "manufacturer")
-@Table(name = "manufacturer", schema = "omega_buy")
 @NamedEntityGraphs({
         @NamedEntityGraph(name = "Manufacturer.products",
                 attributeNodes = {@NamedAttributeNode(value = "products", subgraph = "Product.pureProducts")},
@@ -21,12 +19,14 @@ import java.util.Set;
                 }
         )
 })
+@Entity(name = "Manufacturer")
+@Table(name = "manufacturer")
 public class Manufacturer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "manufacturer_id_gen")
-    @SequenceGenerator(name = "manufacturer_id_gen", schema = "omega_buy",
-            sequenceName = "manufacturer_id_seq", allocationSize = 1)
+    @SequenceGenerator(name = "manufacturer_id_gen", sequenceName = "manufacturer_id_seq", allocationSize = 1)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "code", unique = true)
@@ -38,8 +38,7 @@ public class Manufacturer {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(targetEntity = Product.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "manufacturer_id", referencedColumnName = "id")
+    @OneToMany(mappedBy = "manufacturer", fetch = FetchType.LAZY)
     @EqualsAndHashCode.Exclude
     private Set<Product> products;
 

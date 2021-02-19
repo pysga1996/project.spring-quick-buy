@@ -14,9 +14,12 @@ public class ProductDTO {
     private Long id;
 
     @JsonView(Views.Public.class)
-    private String name;
+    private String code;
 
     @JsonView(Views.Public.class)
+    private String name;
+
+    @JsonView(Views.Internal.class)
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private Collection<CategoryDTO> categories;
@@ -37,9 +40,22 @@ public class ProductDTO {
     @ToString.Exclude
     private Collection<InventoryDTO> inventories;
 
+    public interface Groups {
+        interface Create {
+        }
+
+        interface Update {
+        }
+    }
+
     public interface Views {
-        interface Public  { }
-        interface Internal extends Public { }
+
+        interface Public {
+        }
+
+        interface Internal extends Public, CategoryDTO.Views.Public,
+                ManufacturerDTO.Views.Public, InventoryDTO.Views.Public {
+        }
     }
 
 }

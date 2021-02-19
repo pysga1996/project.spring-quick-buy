@@ -10,7 +10,8 @@ import java.util.Collection;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "order")
+@Entity(name = "Order")
+@Table(name = "order")
 public class Order {
 
   @Id

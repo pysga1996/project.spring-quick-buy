@@ -16,4 +16,20 @@ public class CartDTO {
     private Collection<ItemDTO> items;
 
     private Long userId;
+
+    public interface Groups {
+        interface Create {
+        }
+
+        interface Update {
+        }
+    }
+
+    public interface Views {
+        interface Public {
+        }
+
+        interface Internal extends ItemDTO.Views.Public {
+        }
+    }
 }

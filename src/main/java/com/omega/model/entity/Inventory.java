@@ -10,7 +10,8 @@ import java.util.Collection;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "inventory")
+@Entity(name = "Inventory")
+@Table(name = "inventory")
 public class Inventory {
 
     @Id

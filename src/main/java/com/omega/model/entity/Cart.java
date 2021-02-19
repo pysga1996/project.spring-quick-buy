@@ -10,14 +10,15 @@ import java.util.Collection;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "cart")
+@Entity(name = "Cart")
+@Table(name = "cart")
 public class Cart {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
-  @OneToMany(mappedBy = "cart")
+  @OneToMany(mappedBy = "cart", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
   private Collection<Item> items;
 
   @Column

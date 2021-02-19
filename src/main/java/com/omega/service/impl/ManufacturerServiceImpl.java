@@ -1,5 +1,6 @@
 package com.omega.service.impl;
 
+import com.omega.error.BusinessException;
 import com.omega.mapper.ManufacturerMapper;
 import com.omega.model.dto.ManufacturerDTO;
 import com.omega.repositories.ManufacturerRepository;
@@ -26,7 +27,7 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public List<ManufacturerDTO> getManufacturerList() {
         return this.manufacturerRepository.findAll()
                 .stream()
@@ -35,7 +36,17 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
+    public List<ManufacturerDTO> getManufacturerDropList() {
+        return this.manufacturerRepository.findAllNoFetch()
+                .stream()
+                .peek(e -> e.setProducts(null))
+                .map(this.manufacturerMapper::entityToDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public Optional<ManufacturerDTO> getManufacturerById(Long id) {
         return Optional.ofNullable(this.manufacturerMapper
                         .entityToDto(this.manufacturerRepository.findById(id).orElse(null)));
@@ -44,6 +55,15 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     @Override
     @Transactional
     public void saveManufacturer(ManufacturerDTO manufacturerDTO) {
+        if (manufacturerDTO.getId() == null) {
+            if (this.manufacturerRepository.existsByCode(manufacturerDTO.getCode())) {
+                throw new BusinessException(409, "validation.manufacturer.exist");
+            }
+        } else {
+            if (this.manufacturerRepository.existsByCodeAndIdNot(manufacturerDTO.getCode(), manufacturerDTO.getId())) {
+                throw new BusinessException(409, "validation.manufacturer.exist");
+            }
+        }
         this.manufacturerRepository.save(this.manufacturerMapper.dtoToEntity(manufacturerDTO));
     }
 

@@ -16,4 +16,20 @@ public class CategoryDTO {
     private String name;
 
     private Collection<ProductDTO> products;
+
+    public interface Groups {
+        interface Create {
+        }
+
+        interface Update {
+        }
+    }
+
+    public interface Views {
+        interface Public {
+        }
+
+        interface Internal extends ProductDTO.Views.Public {
+        }
+    }
 }
