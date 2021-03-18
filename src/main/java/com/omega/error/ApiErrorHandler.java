@@ -24,14 +24,14 @@ public class ApiErrorHandler {
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-    public ApiError handleGeneralException(Exception ex, WebRequest request) {
+    public ApiError handleGeneralException(Exception ex) {
         log.error(ex);
         return new ApiError(500, ex.getLocalizedMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    public ApiError handleValidationException(MethodArgumentNotValidException ex, WebRequest request) {
+    public ApiError handleValidationException(MethodArgumentNotValidException ex) {
         log.error(ex);
         StringBuilder sb = new StringBuilder();
         String transMsg;

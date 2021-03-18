@@ -1,17 +1,33 @@
 server:
-  port: 8090
+  port: 8091
   servlet:
     context-path: /omega-buy
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 1024
+  http2:
+    enabled: true
+  ssl:
+    enabled: true
+    enabled-protocols: TLSv1.2
+    key-alias: ${SSL_KEY_ALIAS:}
+    key-password: ${SSL_KEY_PASSWORD:}
+    key-store: classpath:vengeance.jks
+    key-store-password: ${SSL_KEYSTORE_PASSWORD:}
+    key-store-type: JKS
+    protocol: TLS
 logging:
   level:
     root: info
+  config: classpath:log4j-spring.xml
 #  org.springframework.data: debug
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    password: 123456
-    username: postgres
-    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME:}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
+    username: ${SPRING_DATASOURCE_USERNAME:}
+    url: ${SPRING_DATASOURCE_URL:}
     hikari:
       connectionTimeout: 30000
       idleTimeout: 100000
@@ -37,7 +53,17 @@ spring:
     location: classpath:banner.txt
   main:
     banner-mode: log
+  security:
+    oauth2:
+      resourceserver:
+        opaquetoken:
+          introspection-uri: ${AUTH_SERVICE:}
+          client-id: ${CLIENT_ID:}
+          client-secret: ${CLIENT_SECRET:}
 custom:
-  auth-service: ${AUTH_SERVICE:}
-  client-id: ${CLIENT_ID:}
-  client-secret: ${CLIENT_SECRET:}
+  http-port: 8090
+  https-port: 8091
+  security-policy: CONFIDENTAL
+  connector-scheme: http
+  trust-store-password: ${SSL_TRUSTSTORE_PASSWORD:}
+  trust-store-type: JKS

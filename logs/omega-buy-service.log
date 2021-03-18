@@ -1,0 +1,65 @@
+2021-03-17 09:22:27,344 INFO o.s.b.SpringApplicationBannerPrinter [main] 
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMdhoooooshmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMd+.            -odMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMmo.    -oohddyo+:    `sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMy.   /hMMMMMMMMMMMNy-   `dMMMMMNNNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMo   -mMMMMMMMMMMMMMMMMh-   sMMMMNmdhhhhhhhhhhhhddmdddddddddmNNmdhhhhhhhhhhhhdNMNNNNNNNNNNMMMMM
+MMMMMy   os::.hMMMMMMMMMMMMMMN-   hMMMMMMNdhhhhmNNNmmdhhhdNmhhhhmMMMMMdhhmMNmdhhhhmMMMNdhhhhdmNMMMMM
+MMMMM`  -MMMM+ o:::::::::.`NMMN.  /MMMMMMMNhhhhNMMMMMNhhhhNdhhhhNMMMMMmhhmMMMMmhhhhdNMNdhhNMMMMMMMMM
+MMMMM.  +MMMMN`:Msoooooo+ :MMMM+   mMMMMMMNhhhhdmmmdhhhhhmMdhhhhNMMMMMNhhmMMMMMMmhhhhdhhNMMMMMMMMMMM
+MMMMM.  +MMMMMh yMsooooo``NMMMMo   mMMMMMMNhhhhhhhhhhhhdMMMdhhhhNMMMMMNhhmMMMMMMMNdhhhdMMMMMMMMMMMMM
+MMMMM`  -MMMMM+ -::::::::yMMMMN.  :NMMMMMMMdhhhdMMMNdhhhhNMmhhhhmMMMMMdhhMMMMMMMMMmhhhmMMMMMMMMMMMMM
+MMMMMy   oMMMd..:::::::::::NMN/   hMMMMMMMMdhhhdMMMNdhhhhdMMdhhhhdmmmhhhmMMMMMMMMMmhhhdMMMMMMMMMMMMM
+MMMMMMo   /mMMMMh:yMMM+/NMMMd-   sMMMMMMMNmhhhhhdhhhhhhdmMMMMNmddhhddmmMMMMMMMMNmmhhhhhdmmNMMMMMMMMM
+MMMMMMMy    /hMMhohMMMsoNMh:   `dMMMMMNmddddddmmmmNNNMMMMMMMMMMMMMMMMMMMMMMMMMmmmmmmNNNNNNNNMMMMMMMM
+MMMMMyMMm+    .sMMMMMMMM/`   `sNMNhMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMy-mMMMy   +MMMMMMMM.   yMMMh-hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMM+ oooo   +MMMMMMMM.   +oo+`sMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMo::::   yMMMMMMMMy  `::::sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+2021-03-17 09:22:27,413 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.6.Final
+2021-03-17 09:22:27,777 INFO o.s.b.StartupInfoLogger [main] Starting OmegaBuyServiceApplication using Java 1.8.0_261 on ts-client31 with PID 9948 (F:\Programming\Java\projects\omega-buy-service\target\classes started by pysga in F:\Programming\Java\projects\omega-buy-service)
+2021-03-17 09:22:27,781 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-03-17 09:22:34,434 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-17 09:22:34,590 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 134 ms. Found 7 JPA repository interfaces.
+2021-03-17 09:22:36,195 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$a8b43a6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-17 09:22:36,249 INFO o.s.w.s.a.s.AbstractAddressingEndpointMapping [main] Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-03-17 09:22:36,384 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@10244722' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-17 09:22:36,385 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityConfiguration' of type [com.omega.config.securiry.MethodSecurityConfiguration$$EnhancerBySpringCGLIB$$f0f01787] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-17 09:22:36,403 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-17 09:22:37,176 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port(s): 8091 (https) 8090 (http)
+2021-03-17 09:22:37,214 INFO o.a.j.l.DirectJDKLog [main] The ["https-jsse-nio-8091"] connector has been configured to support negotiation to [h2] via ALPN
+2021-03-17 09:22:37,214 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["https-jsse-nio-8091"]
+2021-03-17 09:22:37,215 INFO o.a.j.l.DirectJDKLog [main] The ["http-nio-8090"] connector has been configured to support HTTP upgrade to [h2c]
+2021-03-17 09:22:37,215 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8090"]
+2021-03-17 09:22:37,230 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2021-03-17 09:22:37,230 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-03-17 09:22:37,419 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-03-17 09:22:37,419 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 9343 ms
+2021-03-17 09:22:37,885 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-17 09:22:38,062 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.23.Final
+2021-03-17 09:22:38,506 INFO o.h.a.c.r.j.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-17 09:22:38,809 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2021-03-17 09:22:39,668 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2021-03-17 09:22:39,749 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2021-03-17 09:22:41,695 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-17 09:22:41,730 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-17 09:22:44,183 INFO o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1067bc4c, org.springframework.security.web.context.SecurityContextPersistenceFilter@25c98637, org.springframework.security.web.header.HeaderWriterFilter@e280006, org.springframework.web.filter.CorsFilter@69ee0861, org.springframework.security.web.authentication.logout.LogoutFilter@4a00d591, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@4402ed61, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@108fd5d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@535aa7c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5de6c7d7, org.springframework.security.web.session.SessionManagementFilter@2ef63b6d, org.springframework.security.web.access.ExceptionTranslationFilter@520eb9f8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1db565f2]
+2021-03-17 09:22:44,211 INFO o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7daf167, org.springframework.security.web.context.SecurityContextPersistenceFilter@25af1dbf, org.springframework.security.web.header.HeaderWriterFilter@4cd7128, org.springframework.web.filter.CorsFilter@6df4d8f1, org.springframework.security.web.csrf.CsrfFilter@46ae897c, org.springframework.security.web.authentication.logout.LogoutFilter@19b33b0d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2cdcedef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@43778d6d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@735b1ad2, org.springframework.security.web.session.SessionManagementFilter@22b4ad0c, org.springframework.security.web.access.ExceptionTranslationFilter@634d56eb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@d695f9d]
+2021-03-17 09:22:44,356 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-17 09:22:44,695 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["https-jsse-nio-8091"]
+2021-03-17 09:22:44,774 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8090"]
+2021-03-17 09:22:44,780 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8091 (https) 8090 (http) with context path '/omega-buy'
+2021-03-17 09:22:44,807 INFO o.s.b.StartupInfoLogger [main] Started OmegaBuyServiceApplication in 18.575 seconds (JVM running for 22.339)
+2021-03-17 09:23:31,009 INFO o.a.j.l.DirectJDKLog [https-jsse-nio-8091-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-17 09:23:31,009 INFO o.s.w.s.FrameworkServlet [https-jsse-nio-8091-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-03-17 09:23:31,011 INFO o.s.w.s.FrameworkServlet [https-jsse-nio-8091-exec-1] Completed initialization in 2 ms
+2021-03-17 09:25:18,795 ERROR c.o.e.ApiErrorHandler [https-jsse-nio-8091-exec-4] org.springframework.security.access.AccessDeniedException: Access is denied
+2021-03-17 10:22:42,518 INFO o.s.s.c.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-17 10:22:46,842 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-03-17 10:22:46,925 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2021-03-17 10:22:46,937 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.

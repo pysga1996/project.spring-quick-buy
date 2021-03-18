@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/order")
-@CrossOrigin(origins = {"https://omega-buy-service.herokuapp.com", "http://localhost:3000"},
+@CrossOrigin(originPatterns = {"*"},
         allowedHeaders = {"*"}, allowCredentials = "true", exposedHeaders = {HttpHeaders.SET_COOKIE})
 public class OrderRestController {
 }
