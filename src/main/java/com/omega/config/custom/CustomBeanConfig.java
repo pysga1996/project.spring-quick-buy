@@ -8,6 +8,8 @@ import org.apache.coyote.http2.Http2Protocol;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
 import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnCloudPlatform;
+import org.springframework.boot.cloud.CloudPlatform;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.MessageSource;
@@ -46,7 +48,7 @@ public class CustomBeanConfig {
     }
 
     @Bean
-    @Profile({"default","poweredge"})
+    @ConditionalOnCloudPlatform(CloudPlatform.NONE)
     public ServletWebServerFactory servletContainer() {
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory() {
             @Override
