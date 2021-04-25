@@ -10,8 +10,6 @@ import java.util.stream.Collectors;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnCloudPlatform;
-import org.springframework.boot.cloud.CloudPlatform;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,7 +26,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Log4j2
 @Component
 @Primary
-@ConditionalOnCloudPlatform(CloudPlatform.NONE)
 public class CustomOpaqueTokenIntrospector implements OpaqueTokenIntrospector {
 
     private static final String USERNAME = "user_name";

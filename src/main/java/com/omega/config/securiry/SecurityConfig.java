@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector;
 import org.springframework.security.oauth2.server.resource.web.DefaultBearerTokenResolver;
 
 @Configuration
@@ -22,12 +23,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${spring.security.oauth2.resourceserver.jwt.jwk-set-uri}")
     private String jwkSetUri;
 
-//    private OpaqueTokenIntrospector opaqueTokenIntrospector;
+    private final OpaqueTokenIntrospector opaqueTokenIntrospector;
 
     private final Environment env;
 
     @Autowired
-    public SecurityConfig(Environment env) {
+    public SecurityConfig(
+        OpaqueTokenIntrospector opaqueTokenIntrospector,
+        Environment env) {
+        this.opaqueTokenIntrospector = opaqueTokenIntrospector;
         this.env = env;
     }
 
@@ -41,7 +45,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -68,12 +71,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     httpSecurityOAuth2ResourceServerConfigurer.jwt(jwtConfigurer ->
                         jwtConfigurer.jwkSetUri(this.jwkSetUri));
                 }
-//                else {
-////                    log.info();
-//                    System.out.println("Non-Heroku config Opaque Token");
-//                    httpSecurityOAuth2ResourceServerConfigurer.opaqueToken(opaqueTokenConfigurer ->
-//                        opaqueTokenConfigurer.introspector(opaqueTokenIntrospector));
-//                }
+                else {
+//                    log.info();
+                    System.out.println("Non-Heroku config Opaque Token");
+                    httpSecurityOAuth2ResourceServerConfigurer.opaqueToken(opaqueTokenConfigurer ->
+                        opaqueTokenConfigurer.introspector(opaqueTokenIntrospector));
+                }
                 httpSecurityOAuth2ResourceServerConfigurer.bearerTokenResolver(bearerTokenResolver);
             })
             .headers()
