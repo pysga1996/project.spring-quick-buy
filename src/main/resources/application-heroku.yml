@@ -11,7 +11,7 @@ spring:
     name: omega-buy-service
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:${DATABASE_URL:}
+    url: jdbc:${DB_URL:}
     hikari:
       connectionTimeout: 30000
       idleTimeout: 100000

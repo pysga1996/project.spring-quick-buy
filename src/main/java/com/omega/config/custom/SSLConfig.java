@@ -14,6 +14,7 @@ import javax.net.ssl.TrustManagerFactory;
 import lombok.extern.log4j.Log4j2;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.postgresql.Driver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.cloud.CloudPlatform;
@@ -127,4 +128,10 @@ public class SSLConfig {
             .add(new BasicAuthenticationInterceptor(clientId, clientSecret));
         return restTemplate;
     }
+
+//    public static void main(String[] args) {
+//        Driver driver = new Driver();
+//        boolean accept = driver.acceptsURL("postgresql://npcgksjamwuabv:42fd42a050ec71ca2da0f83d97e1093d8e6b2941eb37429cc204192e56ba436a@ec2-18-203-62-227.eu-west-1.compute.amazonaws.com:5432/de5fackuejr5lh");
+//        System.out.println(accept);
+//    }
 }
