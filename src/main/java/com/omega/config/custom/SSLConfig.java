@@ -117,7 +117,8 @@ public class SSLConfig {
     @LoadBalanced
     public RestTemplate restTemplate(RestTemplateBuilder rtb) {
         RestTemplate restTemplate = rtb.build();
-        if (CloudPlatform.HEROKU.isActive(this.env)) {
+        if (CloudPlatform.NONE.isActive(this.env)) {
+            System.out.println("Not Heroku, setup SSL");
             HttpClient httpClient = HttpClients.custom().setSSLContext(this.customSSL()).build();
             ClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
             restTemplate.setRequestFactory(requestFactory);
