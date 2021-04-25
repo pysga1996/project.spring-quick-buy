@@ -12,10 +12,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector;
 import org.springframework.security.oauth2.server.resource.web.DefaultBearerTokenResolver;
 
-@Log
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private static final Logger log = LogManager.getLogger(SecurityConfig.class);
 
     private final OpaqueTokenIntrospector opaqueTokenIntrospector;
 
