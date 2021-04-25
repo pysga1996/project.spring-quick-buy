@@ -23,6 +23,8 @@ logging:
   config: classpath:log4j-spring.xml
 #  org.springframework.data: debug
 spring:
+  application:
+    name: omega-buy-service
   datasource:
     driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME:}
     password: ${SPRING_DATASOURCE_PASSWORD:}
@@ -67,3 +69,12 @@ custom:
   connector-scheme: http
   trust-store-password: ${SSL_TRUSTSTORE_PASSWORD:}
   trust-store-type: JKS
+eureka:
+  instance:
+    hostname: omega-buy.vengeance.net
+    secure-port-enabled: true
+    non-secure-port-enabled: false
+  #    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:}
