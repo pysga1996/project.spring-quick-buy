@@ -3,7 +3,7 @@ server:
     context-path: /omega-buy
 logging:
   level:
-    root: info
+    root: debug
 #  org.springframework.data: debug
 spring:
   application:
