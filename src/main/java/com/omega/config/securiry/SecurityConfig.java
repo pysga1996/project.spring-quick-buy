@@ -16,7 +16,7 @@ import org.springframework.security.oauth2.server.resource.web.DefaultBearerToke
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private static final Logger log = LogManager.getLogger(SecurityConfig.class);
+//    private static final Logger log = LogManager.getLogger(SecurityConfig.class);
 
     private final OpaqueTokenIntrospector opaqueTokenIntrospector;
 
