@@ -26,6 +26,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         this.opaqueTokenIntrospector = opaqueTokenIntrospector;
     }
 
+    @Autowired(required = false)
+    public void setOpaqueTokenIntrospector(
+        OpaqueTokenIntrospector opaqueTokenIntrospector) {
+        this.opaqueTokenIntrospector = opaqueTokenIntrospector;
+    }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
