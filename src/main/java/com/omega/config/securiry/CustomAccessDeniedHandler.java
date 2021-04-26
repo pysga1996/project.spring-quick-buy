@@ -2,11 +2,11 @@ package com.omega.config.securiry;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.boot.configurationprocessor.json.JSONException;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
@@ -31,15 +31,19 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         PrintWriter out = httpServletResponse.getWriter();
         httpServletResponse.setContentType("application/json");
         httpServletResponse.setCharacterEncoding("UTF-8");
-        Map<String, Object> map = new HashMap<>();
-        map.put("code", 9999);
-        map.put("message", ex.getLocalizedMessage());
-        StringBuilder sb = new StringBuilder();
-        for (StackTraceElement stackTraceElement: ex.getStackTrace()) {
-            sb.append(stackTraceElement.toString()).append("\n");
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("code", 9999);
+            jsonObject.put("message", ex.getLocalizedMessage());
+            StringBuilder sb = new StringBuilder();
+            for (StackTraceElement stackTraceElement: ex.getStackTrace()) {
+                sb.append(stackTraceElement.toString()).append("\n");
+            }
+            jsonObject.put("detail", sb.toString());
+        } catch (JSONException exception) {
+            log.error(ex);
         }
-        map.put("detail", sb.toString());
-        out.print(map);
+        out.print(jsonObject);
         out.flush();
     }
 }

@@ -14,7 +14,6 @@ import javax.net.ssl.TrustManagerFactory;
 import lombok.extern.log4j.Log4j2;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.postgresql.Driver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.cloud.CloudPlatform;
@@ -121,8 +120,10 @@ public class SSLConfig {
     @LoadBalanced
     public RestOperations restTemplate(RestTemplateBuilder rtb) {
         RestTemplate restTemplate = rtb.build();
-        if (CloudPlatform.NONE.isActive(this.env)) {
-            System.out.println("Not Heroku, setup SSL");
+        if (CloudPlatform.HEROKU.isActive(this.env)) {
+            log.info("Heroku detected, rest template does not setup SSL");
+        } else {
+            log.info("Not Heroku, rest template is setting up SSL");
             HttpClient httpClient = HttpClients.custom().setSSLContext(this.customSSL()).build();
             ClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory(httpClient);
             restTemplate.setRequestFactory(requestFactory);
