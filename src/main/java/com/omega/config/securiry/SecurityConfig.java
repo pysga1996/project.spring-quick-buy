@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector;
 import org.springframework.security.oauth2.server.resource.web.DefaultBearerTokenResolver;
+import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -27,12 +28,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final Environment env;
 
+    private final AccessDeniedHandler accessDeniedHandler;
+
     @Autowired
     public SecurityConfig(
         OpaqueTokenIntrospector opaqueTokenIntrospector,
-        Environment env) {
+        Environment env,
+        AccessDeniedHandler accessDeniedHandler) {
         this.opaqueTokenIntrospector = opaqueTokenIntrospector;
         this.env = env;
+        this.accessDeniedHandler = accessDeniedHandler;
     }
 
 //    @Autowired(required = false)
@@ -77,7 +82,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     httpSecurityOAuth2ResourceServerConfigurer.opaqueToken(opaqueTokenConfigurer ->
                         opaqueTokenConfigurer.introspector(opaqueTokenIntrospector));
                 }
-                httpSecurityOAuth2ResourceServerConfigurer.bearerTokenResolver(bearerTokenResolver);
+                httpSecurityOAuth2ResourceServerConfigurer
+                    .bearerTokenResolver(bearerTokenResolver)
+                    .accessDeniedHandler(this.accessDeniedHandler);
             })
             .headers()
             .frameOptions().sameOrigin().disable()
