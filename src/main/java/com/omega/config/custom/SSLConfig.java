@@ -22,11 +22,13 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.Resource;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.client.support.BasicAuthenticationInterceptor;
+import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
 @Log4j2
@@ -115,8 +117,9 @@ public class SSLConfig {
     }
 
     @Bean
+    @Primary
     @LoadBalanced
-    public RestTemplate restTemplate(RestTemplateBuilder rtb) {
+    public RestOperations restTemplate(RestTemplateBuilder rtb) {
         RestTemplate restTemplate = rtb.build();
         if (CloudPlatform.NONE.isActive(this.env)) {
             System.out.println("Not Heroku, setup SSL");
