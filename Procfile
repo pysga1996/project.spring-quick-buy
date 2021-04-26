@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -Dspring.profiles.active=heroku -jar target/omega-buy-service-0.0.1-SNAPSHOT.jar --spring.cloud.bootstrap.name=bootstrap-heroku  --spring.config.name=application-heroku
+web: java -agentlib:jdwp=transport=dt_socket,server=y,address=9090,suspend=n -Dserver.port=$PORT $JAVA_OPTS -Dspring.profiles.active=heroku -jar target/omega-buy-service-0.0.1-SNAPSHOT.jar --spring.cloud.bootstrap.name=bootstrap-heroku  --spring.config.name=application-heroku
