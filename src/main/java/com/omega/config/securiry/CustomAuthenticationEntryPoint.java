@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.context.annotation.Primary;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -29,6 +30,7 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
         throws IOException {
         log.error(ex);
         PrintWriter out = httpServletResponse.getWriter();
+        httpServletResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
         httpServletResponse.setContentType("application/json");
         httpServletResponse.setCharacterEncoding("UTF-8");
         JSONObject jsonObject = new JSONObject();

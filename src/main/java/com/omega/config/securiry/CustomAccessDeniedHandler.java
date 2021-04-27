@@ -8,6 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.context.annotation.Primary;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -29,6 +30,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         throws IOException {
         log.error(ex);
         PrintWriter out = httpServletResponse.getWriter();
+        httpServletResponse.setStatus(HttpStatus.FORBIDDEN.value());
         httpServletResponse.setContentType("application/json");
         httpServletResponse.setCharacterEncoding("UTF-8");
         JSONObject jsonObject = new JSONObject();
