@@ -1,4 +1,4 @@
-package com.omega.config.custom;
+package com.omega.config.general;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @Configuration
-public class CustomBeanConfig {
+public class CommonConfig {
 
     @Value("${custom.http-port}")
     private Integer httpPort;

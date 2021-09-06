@@ -2,6 +2,9 @@ package com.omega.config.securiry;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.log4j.Log4j2;
@@ -17,6 +20,9 @@ import org.springframework.http.HttpStatus;
  **/
 @Log4j2
 public abstract class ErrorResponseProducer {
+
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("HH:mm:ss dd/MM/yyyy") .withZone(
+        ZoneId.systemDefault());
 
     /**
      *
@@ -43,6 +49,7 @@ public abstract class ErrorResponseProducer {
                 sb.append(stackTraceElement.toString()).append("\n");
             }
             jsonObject.put("detail", sb.toString());
+            jsonObject.put("timestamp", FORMATTER.format(Instant.now()));
         } catch (JSONException exception) {
             log.error(ex);
         }

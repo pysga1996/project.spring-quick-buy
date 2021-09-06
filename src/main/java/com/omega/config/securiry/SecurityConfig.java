@@ -104,7 +104,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .authenticationEntryPoint(this.authenticationEntryPoint);
             })
             .headers()
-            .frameOptions().sameOrigin().disable()
+            .frameOptions().sameOrigin()
+            .httpStrictTransportSecurity().disable()
+            .and()
             .authorizeRequests().anyRequest().permitAll().and();
     }
 }

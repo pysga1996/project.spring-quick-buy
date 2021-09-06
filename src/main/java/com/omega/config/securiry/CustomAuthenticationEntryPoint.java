@@ -3,6 +3,7 @@ package com.omega.config.securiry;
 import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
  * @project vengeance
  * @since 1.0
  **/
+@Log4j2
 @Primary
 @Component
 public class CustomAuthenticationEntryPoint extends ErrorResponseProducer implements
@@ -24,6 +26,7 @@ public class CustomAuthenticationEntryPoint extends ErrorResponseProducer implem
     public void commence(HttpServletRequest httpServletRequest,
         HttpServletResponse httpServletResponse, AuthenticationException ex)
         throws IOException {
+        log.error(ex);
         super.produceErrorResponse(httpServletRequest, httpServletResponse, ex,
             HttpStatus.UNAUTHORIZED);
     }

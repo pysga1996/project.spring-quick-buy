@@ -1,4 +1,4 @@
-package com.omega.config.custom;
+package com.omega.config.securiry;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package com.omega.config.custom;
+package com.omega.config.securiry;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
