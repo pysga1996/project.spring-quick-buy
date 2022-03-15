@@ -1,6 +1,6 @@
 # Mind Order Service
 
-Order Api
+Order API
 
 ## Deployment Url
 
