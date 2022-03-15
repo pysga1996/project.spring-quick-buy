@@ -1,7 +1,7 @@
 server:
   port: 8091
   servlet:
-    context-path: /omega-buy
+    context-path: /mind-order
   compression:
     enabled: true
     mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
@@ -24,7 +24,7 @@ logging:
 #  org.springframework.data: debug
 spring:
   application:
-    name: omega-buy-service
+    name: mind-order-service
   datasource:
     driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME:}
     password: ${SPRING_DATASOURCE_PASSWORD:}
@@ -73,7 +73,7 @@ custom:
   trust-store-type: JKS
 eureka:
   instance:
-    hostname: omega-buy.vengeance.net
+    hostname: mind-order.revice.com
     secure-port-enabled: true
     non-secure-port-enabled: false
   #    prefer-ip-address: true

@@ -1,13 +1,13 @@
 server:
   servlet:
-    context-path: /omega-buy
+    context-path: /mind-order
 logging:
   level:
     root: info
 #  org.springframework.data: debug
 spring:
   application:
-    name: omega-buy-service
+    name: mind-order-service
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:${DB_URL:}
@@ -54,7 +54,7 @@ custom:
   trust-store-type: JKS
 eureka:
   instance:
-    hostname: omega-buy-service.herokuapp.com
+    hostname: mind-order-service.herokuapp.com
     secure-port-enabled: true
     secure-port: 443
     non-secure-port-enabled: false

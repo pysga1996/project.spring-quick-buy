@@ -1,6 +1,6 @@
 spring:
   application:
-    name: omega-buy-service
+    name: mind-order-service
   cloud:
     config:
 #      uri: ${CONFIG_URI:}

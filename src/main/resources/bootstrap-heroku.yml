@@ -1,6 +1,6 @@
 spring:
   application:
-    name: omega-buy-service
+    name: mind-order-service
   cloud:
     config:
       uri: ${CONFIG_URI:}
@@ -15,7 +15,7 @@ spring:
         enabled: false
 eureka:
   instance:
-    hostname: omega-buy-service.herokuapp.com
+    hostname: mind-order-service.herokuapp.com
     secure-port-enabled: true
     secure-port: 443
     non-secure-port-enabled: false

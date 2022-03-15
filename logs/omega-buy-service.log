@@ -22,7 +22,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 
 2021-03-17 09:22:27,413 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.6.Final
-2021-03-17 09:22:27,777 INFO o.s.b.StartupInfoLogger [main] Starting OmegaBuyServiceApplication using Java 1.8.0_261 on ts-client31 with PID 9948 (F:\Programming\Java\projects\omega-buy-service\target\classes started by pysga in F:\Programming\Java\projects\omega-buy-service)
+2021-03-17 09:22:27,777 INFO o.s.b.StartupInfoLogger [main] Starting OmegaBuyServiceApplication using Java 1.8.0_261 on ts-client31 with PID 9948 (F:\Programming\Java\projects\mind-order-service\target\classes started by pysga in F:\Programming\Java\projects\mind-order-service)
 2021-03-17 09:22:27,781 INFO o.s.b.SpringApplication [main] No active profile set, falling back to default profiles: default
 2021-03-17 09:22:34,434 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2021-03-17 09:22:34,590 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 134 ms. Found 7 JPA repository interfaces.
@@ -53,7 +53,7 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 2021-03-17 09:22:44,356 INFO o.s.s.c.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
 2021-03-17 09:22:44,695 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["https-jsse-nio-8091"]
 2021-03-17 09:22:44,774 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8090"]
-2021-03-17 09:22:44,780 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8091 (https) 8090 (http) with context path '/omega-buy'
+2021-03-17 09:22:44,780 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port(s): 8091 (https) 8090 (http) with context path '/mind-order'
 2021-03-17 09:22:44,807 INFO o.s.b.StartupInfoLogger [main] Started OmegaBuyServiceApplication in 18.575 seconds (JVM running for 22.339)
 2021-03-17 09:23:31,009 INFO o.a.j.l.DirectJDKLog [https-jsse-nio-8091-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-03-17 09:23:31,009 INFO o.s.w.s.FrameworkServlet [https-jsse-nio-8091-exec-1] Initializing Servlet 'dispatcherServlet'

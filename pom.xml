@@ -9,11 +9,11 @@
     <version>2.4.0</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>com.vengeance</groupId>
-  <artifactId>omega-buy-service</artifactId>
+  <groupId>com.revice</groupId>
+  <artifactId>mind-order-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>omega-buy-service</name>
-  <description>Demo project for Spring Boot + Postgres</description>
+  <name>mind-order-service</name>
+  <description>Order API</description>
 
   <properties>
     <java.version>1.8</java.version>
@@ -161,6 +161,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>2.4.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
