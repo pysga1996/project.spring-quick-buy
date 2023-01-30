@@ -6,23 +6,11 @@
       <profile name="Annotation profile for mind-order-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
+        <processorPath>
           <entry name="$MAVEN_LOCAL_REPO$/org/springframework/boot/spring-boot-configuration-processor/2.4.0/spring-boot-configuration-processor-2.4.0.jar" />
           <entry name="$MAVEN_LOCAL_REPO$/org/projectlombok/lombok/1.18.18/lombok-1.18.18.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/mapstruct/mapstruct-processor/1.3.1.Final/mapstruct-processor-1.3.1.Final.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/com/jolira/hickory/1.0.0/hickory-1.0.0.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/mapstruct/mapstruct/1.3.1.Final/mapstruct-1.3.1.Final.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/junit/junit/4.12/junit-4.12.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/com/google/guava/guava/19.0/guava-19.0.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/com/puppycrawl/tools/checkstyle/8.14/checkstyle-8.14.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/javax/inject/javax.inject/1/javax.inject-1.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/codehaus/plexus/plexus-container-default/1.6/plexus-container-default-1.6.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/springframework/spring-test/4.0.3.RELEASE/spring-test-4.0.3.RELEASE.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/springframework/spring-beans/4.0.3.RELEASE/spring-beans-4.0.3.RELEASE.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/springframework/spring-context/4.0.3.RELEASE/spring-context-4.0.3.RELEASE.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/joda-time/joda-time/2.9/joda-time-2.9.jar" />
+          <entry name="$MAVEN_LOCAL_REPO$/org/mapstruct/mapstruct-processor/1.4.1.Final/mapstruct-processor-1.4.1.Final.jar" />
+          <entry name="$MAVEN_LOCAL_REPO$/org/mapstruct/mapstruct/1.4.1.Final/mapstruct-1.4.1.Final.jar" />
         </processorPath>
         <module name="mind-order-service" />
         <module name="omega-buy-service" />

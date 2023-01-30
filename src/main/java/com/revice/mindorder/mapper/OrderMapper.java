@@ -6,24 +6,16 @@ import com.revice.mindorder.model.dto.OrderDTO;
 import com.revice.mindorder.model.entity.Order;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", uses = {ItemMapper.class})
+@Mapper(componentModel = "spring")
 public abstract class OrderMapper {
 
     @FullMapping
-    @Mappings({
-            @Mapping(target = "items", qualifiedBy = {PureMapping.class})
-    })
     public abstract OrderDTO entityToDto(Order order);
 
     @FullMapping
-    @Mappings({
-            @Mapping(target = "items", qualifiedBy = {PureMapping.class})
-    })
     public abstract Order dtoToEntity(OrderDTO order);
 
     @FullMapping
@@ -35,15 +27,9 @@ public abstract class OrderMapper {
     public abstract List<Order> dtoToEntityList(List<OrderDTO> orders);
 
     @PureMapping
-    @Mappings({
-            @Mapping(target = "items", ignore = true)
-    })
     public abstract OrderDTO entityToDtoPure(Order order);
 
     @PureMapping
-    @Mappings({
-            @Mapping(target = "items", ignore = true)
-    })
     public abstract Order dtoToEntityPure(OrderDTO order);
 
     @PureMapping

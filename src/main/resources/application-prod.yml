@@ -38,10 +38,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQL10Dialect
         format_sql: true
         default_schema: omega_buy
-    show-sql: true
     open-in-view: false
-  web:
-    locale-resolver: accept_header
+    show-sql: true
   banner:
     location: classpath:banner.txt
   main:

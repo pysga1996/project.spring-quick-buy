@@ -11,35 +11,25 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderDTO extends BaseDTO {
+public class OrderDetailDTO extends BaseDTO {
 
-    private String shopId;
+    private String orderId;
 
-    private String shopName;
+    private String productId;
 
-    private String customerId;
+    private String productName;
 
-    private String customerName;
+    private String productThumbnail;
 
-    private String inventoryId;
+    private String productVariant;
 
-    private String deliveryId;
+    private BigDecimal productPrice;
 
-    private String deliveryPartner;
+    private BigDecimal productDiscount;
 
-    private BigDecimal fee;
+    private BigDecimal productFinalPrice;
 
-    private String deliveryStatus;
-
-    private String paymentId;
-
-    private String paymentMethod;
-
-    private BigDecimal amount;
-
-    private BigDecimal discount;
-
-    private BigDecimal finalAmount;
+    private String bundleId;
 
     private Integer status;
 
