@@ -16,7 +16,10 @@
   <description>Order API</description>
 
   <properties>
+    <spring-boot.version>2.4.0</spring-boot.version>
     <java.version>1.8</java.version>
+    <lombok.version>1.18.18</lombok.version>
+    <mapstruct.version>1.4.1.Final</mapstruct.version>
     <maven.test.skip>true</maven.test.skip>
     <maven.test.failure.ignore>true</maven.test.failure.ignore>
   </properties>
@@ -91,7 +94,7 @@
     <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct</artifactId>
-      <version>1.3.1.Final</version>
+      <version>${mapstruct.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -107,7 +110,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.18</version>
+      <version>${lombok.version}</version>
       <scope>provided</scope>
       <optional>true</optional>
     </dependency>
@@ -147,17 +150,17 @@
             <path>
               <groupId>org.springframework.boot</groupId>
               <artifactId>spring-boot-configuration-processor</artifactId>
-              <version>2.4.0</version>
+              <version>${spring-boot.version}</version>
             </path>
             <path>
               <groupId>org.projectlombok</groupId>
               <artifactId>lombok</artifactId>
-              <version>1.18.18</version>
+              <version>${lombok.version}</version>
             </path>
             <path>
               <groupId>org.mapstruct</groupId>
               <artifactId>mapstruct-processor</artifactId>
-              <version>1.4.1.Final</version>
+              <version>${mapstruct.version}</version>
             </path>
           </annotationProcessorPaths>
         </configuration>
