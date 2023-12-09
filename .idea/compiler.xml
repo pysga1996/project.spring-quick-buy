@@ -8,17 +8,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_LOCAL_REPO$/org/springframework/boot/spring-boot-configuration-processor/2.4.0/spring-boot-configuration-processor-2.4.0.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/projectlombok/lombok/1.18.18/lombok-1.18.18.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/mapstruct/mapstruct-processor/1.4.1.Final/mapstruct-processor-1.4.1.Final.jar" />
-          <entry name="$MAVEN_LOCAL_REPO$/org/mapstruct/mapstruct/1.4.1.Final/mapstruct-1.4.1.Final.jar" />
+          <entry name="D:/Users/pysga/.m2/repository/org/springframework/boot/spring-boot-configuration-processor/2.4.0/spring-boot-configuration-processor-2.4.0.jar" />
+          <entry name="D:/Users/pysga/.m2/repository/org/projectlombok/lombok/1.18.18/lombok-1.18.18.jar" />
+          <entry name="D:/Users/pysga/.m2/repository/org/mapstruct/mapstruct-processor/1.4.1.Final/mapstruct-processor-1.4.1.Final.jar" />
+          <entry name="D:/Users/pysga/.m2/repository/org/mapstruct/mapstruct/1.4.1.Final/mapstruct-1.4.1.Final.jar" />
         </processorPath>
         <module name="mind-order-service" />
         <module name="omega-buy-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mind-order-service" target="1.8" />
       <module name="omega-buy-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
